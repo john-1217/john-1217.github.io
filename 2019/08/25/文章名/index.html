@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>文章名 | Hexo</title>
+  <title>第一篇 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="文章名">
+  <meta name="description" content="广大的读者朋友们大家好，很高兴又可以在博客中和大家分享我的开发经验了。 此次，我准备向大家介绍一个非常好用的jQuery表格插件——jqGrid。 如果您在实际项目中遇到web端表格展示功能的需求，又不知道到底该使用那种技术实现时，jqGrid绝对是您的不二之选。 如果您已经决定使用jqGrid技术完成项目中表格展示功能，又苦于没有详细的使用说明迟迟不能实际开发时，本系列博客绝对是您的不二之选。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一篇">
 <meta property="og:url" content="http://yoursite.com/2019/08/25/文章名/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="广大的读者朋友们大家好，很高兴又可以在博客中和大家分享我的开发经验了。 此次，我准备向大家介绍一个非常好用的jQuery表格插件——jqGrid。 如果您在实际项目中遇到web端表格展示功能的需求，又不知道到底该使用那种技术实现时，jqGrid绝对是您的不二之选。 如果您已经决定使用jqGrid技术完成项目中表格展示功能，又苦于没有详细的使用说明迟迟不能实际开发时，本系列博客绝对是您的不二之选。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-25T04:42:38.000Z">
+<meta property="og:updated_time" content="2019-08-25T05:08:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文章名">
+<meta name="twitter:title" content="第一篇">
+<meta name="twitter:description" content="广大的读者朋友们大家好，很高兴又可以在博客中和大家分享我的开发经验了。 此次，我准备向大家介绍一个非常好用的jQuery表格插件——jqGrid。 如果您在实际项目中遇到web端表格展示功能的需求，又不知道到底该使用那种技术实现时，jqGrid绝对是您的不二之选。 如果您已经决定使用jqGrid技术完成项目中表格展示功能，又苦于没有详细的使用说明迟迟不能实际开发时，本系列博客绝对是您的不二之选。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,20 +161,43 @@
         
   
     <h1 class="article-title" itemprop="name">
-      文章名
+      第一篇
     </h1>
   
 
         
         <a href="/2019/08/25/文章名/" class="archive-article-date">
-  	<time datetime="2019-08-25T04:42:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
+  	<time datetime="2019-08-25T04:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>广大的读者朋友们大家好，很高兴又可以在博客中和大家分享我的开发经验了。</p>
+<p>此次，我准备向大家介绍一个非常好用的jQuery表格插件——jqGrid。</p>
+<p>如果您在实际项目中遇到web端表格展示功能的需求，又不知道到底该使用那种技术实现时，jqGrid绝对是您的不二之选。</p>
+<p>如果您已经决定使用jqGrid技术完成项目中表格展示功能，又苦于没有详细的使用说明迟迟不能实际开发时，本系列博客绝对是您的不二之选。</p>
+<p>本篇博客将为大家介绍一下内容：</p>
+<p>jqGrid简单使用；<br>jqGrid常用选项具体含义简介；<br>jqGrid使用json数据格式，以及jsonReader和repeatitems配合使用时json格式的实际变化。<br>首先，为大家展示一个非常简单Demo。使用jqGrid绘制一张表格</p>
+<p>显示效果：</p>
+<p>HTML：</p>
+<p>1 …<br>2 <table id="list2"></table><br>3 <div id="pager2"></div><br>JavaScript：</p>
+<p> 1 …<br> 2 jQuery(“#list2”).jqGrid({<br> 3        url:’server.php?q=2’,<br> 4     datatype: “json”,<br> 5        colNames:[‘Inv No’,’Date’, ‘Client’, ‘Amount’,’Tax’,’Total’,’Notes’],<br> 6        colModel:[<br> 7            {name:’id’,index:’id’, width:55},<br> 8            {name:’invdate’,index:’invdate’, width:90},<br> 9            {name:’name’,index:’name asc, invdate’, width:100},<br>10            {name:’amount’,index:’amount’, width:80, align:”right”},<br>11            {name:’tax’,index:’tax’, width:80, align:”right”},<br>12            {name:’total’,index:’total’, width:80,align:”right”},<br>13            {name:’note’,index:’note’, width:150, sortable:false}<br>14        ],<br>15        rowNum:10,<br>16        rowList:[10,20,30],<br>17        pager: ‘#pager2’,<br>18        sortname: ‘id’,<br>19     viewrecords: true,<br>20     sortorder: “desc”,<br>21     caption:”JSON Example”<br>22 });<br>23 jQuery(“#list2”).jqGrid(‘navGrid’,’#pager2’,{edit:false,add:false,del:false});<br>下面为大家详细介绍一下上面绘制表格中，jqGrid具体选项的含义。</p>
+<p>url ：这个参数指定了jqGrid从服务器获取数据的请求。<br>datatype ：这个参数指定了jqGrid调用的数据的格式，常用格式有json，xml，local。<br>colName ：这个参数指定了jqGrid每列的title，按顺序依次排列，并且可以看出实际上它就是一个字符串数组。<br>colModel ：这个参数指定了jqGrid各列的具体格式，”name”指定对应数据中属性名，“index”用于列排序，“width”显然是指定列宽，“align”对齐方式，“sortable”指定是否支持排序。其实上面每一个设置基本见名知意，大家可以大胆使用。（注意：colName与colModel 需要一一对应）<br>rowNum ：这个参数指定了jqGrid显示行数，默认值20。<br>rowList ：这个参数指定了jqGrid可以接受的rowNum值，如[10,20,30]。实际上它也仅仅是一个数组。<br>pager ：这个参数指定了jqGrid页脚显示位置。<br>sortname ：这个参数指定了jqGrid默认的排序列，可以是列名也可以是数字。<br>viewrecords ：这个参数设置了是否在Pager Bar显示所有记录的总数。<br>sortorder ：这个参数指定了jqGrid默认排序列的默认排序方式。<br>caption ：这个参数制订了jqGrid的标题，如果设置了，则将显示在Grid的Header层。<br>以上仅仅是最最常用的，最最简单的选项含义，jqGrid还提供了大量选项方便大家使用，如果读者朋友们需要小编会在今后的博客中专门介绍一下jqGrid选项。</p>
+<p>相信有很多读者朋友希望了解到底jqGrid使用的json以什么样的格式呈现，下面就为大家展示一下上面表格中使用的json数据：</p>
+<p> 1 {“page”:”1”,”total”:2,”records”:”13”,<br> 2 “rows”:[<br> 3 {“id”:”13”,”cell”:[“13”,”2007-10-06”,”Client 3”,”1000.00”,”0.00”,”1000.00”,null]},<br> 4 {“id”:”12”,”cell”:[“12”,”2007-10-06”,”Client 2”,”700.00”,”140.00”,”840.00”,null]},<br> 5 {“id”:”11”,”cell”:[“11”,”2007-10-06”,”Client 1”,”600.00”,”120.00”,”720.00”,null]},<br> 6 {“id”:”10”,”cell”:[“10”,”2007-10-06”,”Client 2”,”100.00”,”20.00”,”120.00”,null]},<br> 7 {“id”:”9”,”cell”:[“9”,”2007-10-06”,”Client 1”,”200.00”,”40.00”,”240.00”,null]},<br> 8 {“id”:”8”,”cell”:[“8”,”2007-10-06”,”Client 3”,”200.00”,”0.00”,”200.00”,null]},<br> 9 {“id”:”7”,”cell”:[“7”,”2007-10-05”,”Client 2”,”120.00”,”12.00”,”134.00”,null]},<br>10 {“id”:”6”,”cell”:[“6”,”2007-10-05”,”Client 1”,”50.00”,”10.00”,”60.00”,””]},<br>11 {“id”:”5”,”cell”:[“5”,”2007-10-05”,”Client 3”,”100.00”,”0.00”,”100.00”,”no tax at all”]},<br>12 {“id”:”4”,”cell”:[“4”,”2007-10-04”,”Client 3”,”150.00”,”0.00”,”150.00”,”no tax”]}<br>13 ],<br>14 “userdata”:{“amount”:3220,”tax”:342,”total”:3564,”name”:”Totals:”}}<br>看到jqGrid实际调用的json格式以后，很多读者朋友会产生疑问。是否只有符合上面格式的json数据才能被jqGrid解析？</p>
+<p>答案是：否定的</p>
+<p>这里就不得不介绍一下jqGrid的一个重要的选项jsonReader，jsonReader用于设置如何解析从Server端发回来的json数据。上面表格之所以能够成功解析出来得益于，jsonReader的默认设置。</p>
+<p>jsonReader默认设置：</p>
+<p> 1 jsonReader : {<br> 2     root: “rows”,    // json中代表实际模型数据的入口<br> 3     page: “page”,    // json中代表当前页码的数据<br> 4     total: “total”,    // json中代表页码总数的数据<br> 5     records: “records”, // json中代表数据行总数的数据<br> 6     repeatitems: true, // 如果设为false，则jqGrid在解析json时，会根据name来搜索对应的数据元素（即可以json中元素可以不按顺序）；而所使用的name是来自于colModel中的name设定。<br> 7     cell: “cell”,<br> 8     id: “id”,<br> 9     userdata: “userdata”,<br>10     subgrid: {<br>11         root:”rows”,<br>12         repeatitems: true,<br>13         cell:”cell”<br>14     }<br>15 }<br>如果Server端返回的json数据不太符合默认设置（比如内容结构不同）那么就有必要修改这一设置。</p>
+<p>通常jsonReader和repeatitems是配合使用的，如果repeatitems为false，json 中数据可以乱序，并且允许数据空缺。jqGrid会根据colModel中name属性和json数据对应，根据属性名称进行解析。</p>
+<p>repeatitems为true时：</p>
+<p>1     …<br>2     jsonReader : {<br>3         root:”rows”,<br>4         page: “page”,<br>5         total: “total”,<br>6         records: “records”<br>7     },<br>8     …<br>json结构：</p>
+<p> 1 {<br> 2     “page”: “xxx”,<br> 3     “total”: “yyy”,<br> 4     “records”: “zzz”,<br> 5     “rows” : [<br> 6                  {“id” :”1”, “cell” :[“cell11”, “cell12”, “cell13”]},    // cell中不需要各列的name，但是需要与colModel一一对应<br> 7                  {“id” :”2”, “cell” :[“cell21”, “cell22”, “cell23”]},<br> 8                  …<br> 9     ]<br>10 }<br>repeatitems为false时：</p>
+<p>1     …<br>2     repeatitems: false,<br>3     jsonReader : {<br>4         root:”rows”,<br>5         page: “page”,<br>6         total: “total”,<br>7         records: “records”<br>8     },<br>9     …<br>json结构：</p>
+<p> 1 {<br> 2     “page” : “xxx”,<br> 3     “total” : “yyy”,<br> 4     “records” : “zzz”,<br> 5     “rows” : [<br> 6          {“invid” : “1”,”invdate”:”cell11”, “amount” :”cell12”, “tax” :”cell13”, “total” :”1234”, “note” :”somenote”}, // 数据中需要各列的name，但是可以不按列的顺序<br> 7          {“invid” : “2”,”invdate”:”cell21”, “amount” :”cell22”, “tax” :”cell23”, “total” :”2345”, “note” :”some note”},<br> 8          …<br> 9     ]<br>10 }</p>
+
       
 
       
