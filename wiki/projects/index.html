@@ -139,7 +139,7 @@
     <div class="top bread-nav footnote"><div class="top-row"><div class="left" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/projects/" data-stellar-navigation="">项目作品</a>
 </div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-11-23T13:45:46.000Z">2026-11-23</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-11-24T00:00:00.000Z">2026-11-24</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -152,8 +152,17 @@
     
   </div>
   </div></div>
-<article class="md-text content slide-up"><p>这里收录我做过的代表性项目，包含项目背景、我的角色与技术实现，持续补充中。</p>
-<div class="tag-plugin colorful note" color="cyan"><div class="title">提示</div><div class="body"><p>这是项目文档的起始页，后续可以把每个项目拆成单独页面，在左侧目录树中组织阅读顺序。</p></div></div>
+<article class="md-text content slide-up"><h2 id="tcg">Test Case Generator · 用例生成智能体</h2>
+<p>一个把「读需求、写用例、整理 Excel」自动化掉的开源平台：上传需求文档，LangGraph 工作流自动完成需求分析、测试策略、用例生成和覆盖总结，产出结构化 Markdown 用例表与 Excel 文件。</p>
+<ul>
+<li><strong>四阶段工作流</strong>：需求分析 → 测试策略 → 用例生成 → 覆盖总结，每阶段产物独立可审计</li>
+<li><strong>人机澄清（HITL）</strong>：需求信息不足时进入待澄清状态，补充说明后继续，而不是硬编用例</li>
+<li><strong>知识库 RAG</strong>：业务规则文档向量化后按需求模块检索注入，附检索测试页验证知识质量（BM25 + LLM 引用溯源）</li>
+<li><strong>多模型接入</strong>：OpenAI / Gemini / DeepSeek / Kimi / OpenRouter，界面化配置与连接测试</li>
+</ul>
+<div class="tag-plugin colorful note" color="cyan"><div class="title">我的角色</div><div class="body"><p>独立完成架构设计与全部开发：LangGraph 工作流编排、文档解析、知识库检索、Vue 3 管理界面与 Docker 部署。</p></div></div>
+<div class="tag-plugin colorful note" color="purple"><div class="title">技术栈</div><div class="body"><p>FastAPI · LangGraph · ChromaDB · Vue 3 + Element Plus · LangSmith 可观测 · Docker</p></div></div>
+<p>开源地址：<a target="_blank" rel="noopener" href="https://github.com/john-1217/test_case_generator">github.com/john-1217/test_case_generator</a>　·　设计思路见文章 <a href="/posts/introducing-test-case-generator/">《用例生成智能体：从需求文档到测试用例的开源实践》</a></p>
 </article>
 
 
