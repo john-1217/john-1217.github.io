@@ -1,0 +1,9 @@
+# Wiki 项目：测试用例智能体
+name: 测试用例智能体
+headline: 测试用例智能体
+cover: /assets/wiki-tcg-cover.jpg
+route:
+  path: wiki/projects/
+navigation:
+  tree:
+    '': [index]

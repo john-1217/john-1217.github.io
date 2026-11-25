@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "images": {
+    "https://john-1217.github.io/assets/avatar-final.jpg": {
+      "updatedAt": "2026-11-25T03:47:17.656Z",
+      "dimensions": {
+        "status": "ready",
+        "width": 886,
+        "height": 874
+      },
+      "color": {
+        "status": "ready",
+        "algorithm": "hsla-mean-v1",
+        "size": 64,
+        "hsla": [
+          35.6449,
+          39.7525,
+          73.0927,
+          1
+        ]
+      }
+    },
+    "https://john-1217.github.io/assets/wiki-tcg-cover.jpg": {
+      "updatedAt": "2026-11-25T04:20:08.090Z",
+      "dimensions": {
+        "status": "ready",
+        "width": 2560,
+        "height": 1324
+      },
+      "color": {
+        "status": "ready",
+        "algorithm": "hsla-mean-v1",
+        "size": 64,
+        "hsla": [
+          230.6071,
+          50.6269,
+          25.1993,
+          1
+        ]
+      }
+    }
+  }
+}

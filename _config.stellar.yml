@@ -1,0 +1,124 @@
+# Stellar 主题配置（基于 v2.0.0 默认结构覆盖）
+appearance:
+  color_scheme: dark
+
+features:
+  color_scheme_switch:
+    enabled: true
+
+leftbar:
+  brand:
+    image:
+      src: /assets/avatar-final.jpg
+      variant: plain
+    name: 易中
+    href: /
+  menu:
+    - id: post
+      title: 博客
+      icon: default:documents
+      url: /
+    - id: wiki
+      title: 项目
+      icon: default:notebook
+      url: /wiki/
+      accent: '#2196F3'
+    - id: notes
+      title: 探索
+      icon: default:fire
+      url: /notes/
+      accent: '#4CAF50'
+    - id: friends
+      title: 友链
+      icon: default:link
+      url: /friends/
+      accent: '#F44336'
+    - id: about
+      title: 关于
+      icon: default:profile
+      url: /about/
+      accent: '#b92ed1'
+  widgets:
+    - recent
+
+rightbar:
+  widgets: []
+
+footer:
+  sitemap:
+    - title: 浏览本站
+      items:
+        - '[最近文章](/)'
+        - '[内容归档](/archives/)'
+    - title: 分类查找
+      items:
+        - '[分类](/categories/)'
+        - '[标签](/tags/)'
+        - '[专栏](/topic/)'
+    - title: 联系与关于
+      items:
+        - '[关于](/about/)'
+        - '[友链](/friends/)'
+
+profiles:
+  home:
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets: []
+
+  post:
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - toc
+
+  wiki_index:
+    path: /wiki/
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - toc
+
+  wiki:
+    active_menu: null
+    leftbar:
+      menu: []
+      widgets: []
+      footer:
+        actions: []
+    rightbar:
+      widgets:
+        - toc
+
+  page:
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - toc
+
+  settings:
+    path: /settings/
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets: []
+
+article:
+  style: story
+  show_reading_time: true
+  listing:
+    show_tags: true
+  footer:
+    show_tags: true
